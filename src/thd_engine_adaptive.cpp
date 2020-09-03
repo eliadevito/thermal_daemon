@@ -901,11 +901,11 @@ int cthd_engine_adaptive::evaluate_platform_type_condition(
 }
 
 int cthd_engine_adaptive::evaluate_ac_condition(struct condition condition) {
-	int value = 0;
+	int value = 1;
 	bool on_battery = up_client_get_on_battery(upower_client);
 
 	if (on_battery)
-		value = 1;
+		value = 0;
 
 	return compare_condition(condition, value);
 }
